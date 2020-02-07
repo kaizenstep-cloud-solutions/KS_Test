@@ -1,0 +1,16 @@
+--------------------------------------------------------------------
+JCAR.2020-02-05.
+ESTO REALMENTE ES UN SITIO DONDE ARROJAR IDEAS DE CÓMO MONTAREMOS LA
+ESTRUCTURA OBJECTUAL Y CÓMO FUNCIONARÁN NUESTROS PORYECTOS SF4RETAIL
+U OTROS PROYECTOS ORIENTADOS ENTORNO HEROKU BASADOS EN JAVA
+JCAR.2020-02-05.
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+
+    -- CAPAS --
+    -- FRONT <> BACK <> DATA --
+    FRONT: HTML? + JS(jQuery & AJAX)?
+    BACK: CONTROLLER / OBJECT TREE
+    DATA: la base de datos
+
+--------------------------------------------------------------------

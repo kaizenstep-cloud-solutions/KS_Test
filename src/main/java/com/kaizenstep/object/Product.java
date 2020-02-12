@@ -1,6 +1,6 @@
 package com.kaizenstep.object;
 
-public class Product extends sObject {
+public class Product extends ksObject {
 
     public String code;
 

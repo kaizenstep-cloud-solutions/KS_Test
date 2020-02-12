@@ -1,4 +1,4 @@
 package com.kaizenstep.object;
 
-public class Order extends sObject {
+public class Order extends ksObject {
 }

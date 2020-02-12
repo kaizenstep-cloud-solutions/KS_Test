@@ -1,6 +1,6 @@
 package com.kaizenstep.object;
 
-public class Account extends sObject {
+public class Account extends ksObject {
 
     public String name;
 

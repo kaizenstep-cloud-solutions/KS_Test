@@ -5,6 +5,7 @@
 
 package com.kaizenstep.object;
 import java.util.*;
+import com.kaizenstep.connection.DBConnection;
 
 /**
  * @author  KAIZENstep
@@ -12,7 +13,7 @@ import java.util.*;
  */
 /* First version: JCAR 2020/02/06 */
 
-public class sObject {
+public class ksObject extends DBConnection {
 
     public String ID;
     public Metadata metadata;
@@ -21,7 +22,7 @@ public class sObject {
     public Map<String,Relation> master;
     public Map<String,List<Relation>> children;
 
-    public sObject(){
+    public ksObject(){
         this.factory();
     }
     protected void factory(){
@@ -56,21 +57,21 @@ public class sObject {
 
     }
 
-    public sObject(String organizationID, String ID){
+    public ksObject(String organizationID, String ID){
         this( new Organization(organizationID,""), ID);
     }
-    public sObject(Organization organization, String ID){
+    public ksObject(Organization organization, String ID){
         this();
         this.organization = organization;
         this.ID = ID;
     }
 
-    public String getClassName() { return this.getClass().getName(); }
+    public String getClassName() { return this.getClass().getSimpleName(); }
 
-    public void addMaster(sObject obj) {
+    public void addMaster(ksObject obj) {
         obj.addChildren(this);
     }
-    public void addChildren(sObject obj) {
+    public void addChildren(ksObject obj) {
 
         Relation newRelation = new Relation(this,obj);
 
@@ -83,4 +84,15 @@ public class sObject {
     }
 
     protected void factoryFields() {}
+
+    @Override
+    public void connect() {
+        super.connect(this);
+    }
+
+    @Override
+    public void connect(String dbname) {
+        this.dbname = dbname;
+        super.connect(this);
+    }
 }

@@ -2,7 +2,7 @@ package com.kaizenstep.object;
 
 import java.util.*;
 
-public class Contact extends sObject {
+public class Contact extends ksObject {
 
     public String firstName;
     public String lastName;

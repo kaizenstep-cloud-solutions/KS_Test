@@ -1,6 +1,6 @@
 package com.kaizenstep.object;
 
-public class OrderLine extends sObject {
+public class OrderLine extends ksObject {
 
     public OrderLine( Order order , Product product ) {
         super();

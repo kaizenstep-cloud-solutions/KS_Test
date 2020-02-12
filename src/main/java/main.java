@@ -1,4 +1,5 @@
 
+import com.kaizenstep.connection.DBController;
 import com.kaizenstep.object.*;
 
 import java.lang.reflect.Field;
@@ -10,18 +11,23 @@ public class main {
 
         System.out.println(" -- <> -- WELCOME TO KS_TEST CONSOLE DEBUG -- <> -- ");
 
-        AccountB2B b2b = new AccountB2B(); b2b.name = "EMPRESA SL";
+        Contact contact = (Contact) DBController.select(Contact.class.getName()).get(0);
+        System.out.println(contact);
+
+        AccountB2B b2b = (AccountB2B) DBController.select(AccountB2B.class.getName()).get(0);
+        System.out.println(b2b);
+
+        /*AccountB2B b2b = new AccountB2B(); b2b.name = "EMPRESA SL";
         Contact contact = new Contact("Jordi","Carabel");
         b2b.addContact(contact);
         System.out.println(b2b);
-        System.out.println(contact);
+        System.out.println(contact);*/
 
-        System.out.println("\r\n -- <> -- <> -- <> -- -- <> -- -- <> -- <> -- <> -- \r\n");
+        //System.out.println("\r\n -- <> -- <> -- <> -- -- <> -- -- <> -- <> -- <> -- \r\n");
 
-        AccountPerson persona = new AccountPerson("Jordi","Carabel");
-        System.out.println(persona);
+        //AccountPerson persona = new AccountPerson("Jordi","Carabel");
 
-        System.out.println("\r\n -- <> -- <> -- <> -- -- <> -- -- <> -- <> -- <> -- \r\n");
+        /*System.out.println("\r\n -- <> -- <> -- <> -- -- <> -- -- <> -- <> -- <> -- \r\n");
 
         Ticket invoice = new Ticket("TICKET001");
         Product product = new Product("PROD0001");
@@ -29,7 +35,7 @@ public class main {
 
         System.out.println(invL);
         System.out.println(invoice);
-        System.out.println(product);
+        System.out.println(product);*/
 
         System.out.println(" -- <> -- <> -- <> -- GOODBYE-- <> -- <> -- <> -- ");
     }
